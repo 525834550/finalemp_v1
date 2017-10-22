@@ -1,0 +1,263 @@
+$fontsize:12px;
+$lineheight:20px;
+$text-color:#fff;
+$displayline:inline;
+
+@mixin e($element)	{
+	&__#{$element}{
+		@content;
+	}
+}
+
+@mixin m($modifier){
+	&--#{$modifier}{
+		@content;
+	}
+}
+
+body {
+    font-size: $fontsize;
+}
+
+.marginbody{
+      width: 95%;
+    margin: auto;
+}
+
+.header {
+    width: 100%;  
+    padding: 1px;
+    background: #d8d8d8;
+    .header__margin{
+      @extend .marginbody;
+    }
+    .logo {
+    width: 140px;
+    margin: 0px;
+    }
+}
+
+hr{
+
+      @extend .marginbody;
+    
+}
+#userMenu li {
+    display: inline-block;
+    list-style: none;
+    margin-right: 10px;
+}
+
+#userMenu li:nth-child(1){
+    border-right:1px solid #b5b2b2;
+}
+
+#userMenu {
+    list-style-type: none;
+    font-family: arial;
+    color: #000;
+    font-size: 12px;
+    margin-top: 13px;
+     a {
+    color: #000;
+    text-decoration: none;
+    padding: 7px 10px 7px 27px;
+        .cstm_help {
+        padding-left: 10px;
+        }
+    }
+    .cstm_signout{
+        color:#0275d8;
+    }
+}
+
+.btnclass{
+        color: #b5b2b2;
+    background-color: #fff;   
+    cursor: pointer;
+}
+
+.btn-primary,.btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle , .btn-primary:hover{
+    @extend .btnclass;
+    border-color: #fff;
+}
+
+#modelShowBtns input{
+    @extend .btnclass;
+    border-color: #484747;   
+    margin:10px 10px; 
+
+}
+
+#modelShowBtns input:hover{
+    background-color: #484747; 
+    color:#fff;  
+}
+
+.tables{
+    background-color: #5f6167;
+    color: $text-color;
+    padding: 8px;
+    font-size: $fontsize;
+    font-weight: 400;
+    font-family: Helvetica;
+}
+
+.formcss{
+	font-size: $fontsize;
+    font-weight: normal;
+    line-height: $lineheight;
+    display:block;
+}
+
+
+label, input, button, select, textarea, input.form-control {
+   @extend .formcss;
+}
+
+.table tr th{
+	@extend .tables;
+}
+
+
+.panel-body {
+    padding: 15px;
+}
+
+#page-mainTitle {
+    font-size: 24px;
+    padding: 15px 0 10px;
+    margin: 0 auto;
+    width: 50%;
+    display: inline-block;
+    color: #2C3E50;
+    text-transform: capitalize;
+        margin-left: 37px;
+}
+
+.createempBtn{
+    margin-right:19px;
+}
+
+.emp-model{
+    @extend .marginbody;
+}
+
+.form{
+    float:left;
+    .form__search{    
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url('../images/search_icon.png');
+        background-position: 10px 10px; 
+        background-repeat: no-repeat;
+       margin-left:35px;
+    }
+}
+
+
+#createnewemp,#editnewemp{
+    .model__picupload{
+    position: absolute;
+    top: 20px;
+    right: 0;
+
+    }
+
+    .modal-content{
+    width:700px;
+    }
+
+    #Employee_new {
+        label{
+         float: left;           
+        }
+
+        .FirstName_new,.LastName_new,.Email_new,.Phone_new,.Address_new{
+            margin-left: 60px;
+            margin: 0px 0px 10px 60px;
+        }
+
+        .state,.State_new,.gender,.gender_new{
+            display:$displayline;
+        }
+         .gender,.state{
+            margin-right: 10px;
+        }
+        .gender_new,.State_new{
+                margin-left: 10px;
+        }
+    }
+
+    .model__picupload{
+            border-left: 1px solid #484747;
+    }    
+
+
+    .clear{
+        clear:both;
+    }
+}
+
+.inactive{
+    font-style: italic;
+    color: grey;
+}
+
+.active{
+    font-weight: bold;
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+#viewslideout {
+    background: #ececec;
+    position: absolute;
+width: 280px;
+    height: 80%;
+    top: 9%;
+    right:-280px;
+    padding-left: 20px
+}
+    
+
+#view__slidecontent {
+    float:left;
+    background: #d8d8d8;
+    height: 25px;
+    width:100%;
+}
+
+#view__slidein{
+    position: absolute;
+    top: 0; left: 0;
+    background-image: url('../images/double-arrow-right.png');
+    background-position: 0% 0%;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+    cursor:pointer;
+}
+
+.viewemp__content{
+    margin-top:85px;
+    p{
+    margin-top: 25px;
+    }
+}
+
+div#view,div#edit,div#del {
+    cursor: pointer;
+}
+
+#createnewemp .hidecreatenewemp{
+    display:none;
+}
+
